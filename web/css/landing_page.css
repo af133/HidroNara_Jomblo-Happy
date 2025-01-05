@@ -1,0 +1,500 @@
+body{
+    background-image: url("C:/WEB_CITECTH_JOMBLO HAPPY/asset/Beranda.png");
+    background-position: center;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    
+}
+
+/* Header */
+.login {
+    transition: all 0.3s ease; 
+    border: 1px solid transparent;
+    padding: 10px 20px; 
+    border-radius: 5px; 
+}
+
+.login:hover {
+    transform: scale(1.1); 
+    border: 2px solid #55ff63;
+    color: #fff; 
+}
+
+.login:active {
+    transform: scale(0.95); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+}
+.header_ {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 13vh;
+    background-color: #ffffff;
+    z-index: 1000; 
+    display: flex;
+    box-shadow: 0 2px 2px -2px gray;
+}
+
+.header_left{
+    flex: 1;
+}
+.header_left img{
+    height: 40px;
+    width: 268px;
+    margin-left: 40px;
+    margin-top: 3vh;
+}
+.header_right{
+    flex: 2;
+    display: inline-flex;
+}
+.header_right div{
+    margin-left:30px ;
+    color: #494949;
+    margin-top: 5vh;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 20px;
+    font-style: normal;
+}
+.header_right div a{
+    font-size: 20px;
+    text-decoration: none;
+    color: #494949;     
+
+}
+.header_right div a:hover{
+    color:#307545;
+}
+.header_right a button{
+    color: #ffffff;     
+    border: solid;
+    font-weight:500;
+    background-color: #307545;
+    font-size: 20px;
+    width: 100px;
+    border-radius: 32px;
+    width: 100px;
+    height: 42px;
+}
+/*---------------------------------------- body ke-1------------------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.beranda {
+    text-decoration: none; /* Remove default underline */
+    position: relative; /* Make the position relative to adjust the underline */
+}
+.beranda p{
+    color: #307545;
+
+}
+
+.carousel {
+    margin-bottom: 40px;
+    position: relative;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide div {
+    min-width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* Background images */
+.bg1 {
+    background-image: url('C:/WEB_CITECTH_JOMBLO HAPPY/asset/gambar_lading_page_1.png');
+}
+
+.bg2 {
+    background-image: url('C:/WEB_CITECTH_JOMBLO HAPPY/asset/landing_page_2.png');
+}
+
+.bg3 {
+    background-image: url('C:/WEB_CITECTH_JOMBLO HAPPY/asset/landing_page_3.png');
+}
+
+/* Overlay warna gelap */
+.carousel-slide div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+/* Teks di dalam slide */
+.content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: left;
+    padding: 70px;
+}
+
+.content h1 {
+    position: relative;
+    width: 550px;
+    z-index: 2;
+    font-size: 33px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.content p {
+    width: 650px;
+    position: relative;
+    z-index: 2;
+    font-size: 24px;
+}
+
+/* Indikator lingkaran */
+.indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 3;
+}
+
+.indicators span {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.indicators .active {
+    opacity: 1;
+}
+/* Body ke-2--------------------------------------------------------------- */
+.body_2{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    color: #494949;
+    font-style: normal;
+    width: auto;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.kalimat_3 {
+    font-size: 27px;
+    font-weight: bold;
+}
+.kalimat_4{
+    font-size: 20px;
+    margin-top: 20px;
+}
+.kotak_1{
+    display: flex;
+    margin-top: 6vh;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    color: #494949;
+    font-style: normal;
+    height: 35vh;
+    width: auto;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.kotak___{
+    width: 190px;
+    margin-left: 40px;
+    margin-right: 40px;
+    
+}
+.header_fokus_kami {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    text-align: left;
+    z-index: 2;
+    position: absolute;
+    background: linear-gradient(to top,#206D48, #819D39);
+    height: 58px;
+    border-radius: 10px;
+    margin-top: -35px; 
+    margin-left: 12px;
+    width: 58px;
+    margin-bottom: 0; 
+}
+
+
+.body_fokus_kami {
+    text-align: left;
+    border: #307545 solid;
+    z-index: 1;
+    width: 199px;
+    font-size: 12px;
+    border-radius: 15px;
+    height: 20vh;
+    padding: 8px;
+    padding-top: 25px;
+}
+/* ---------------------- Body 3 ----------------- */
+.body_3{
+    display: flex;
+    margin-top: 10vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+.kotak_3{
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    color: #494949;
+    font-style: normal;
+    width: 200px;
+}
+.kotak_3 img{
+    margin: 0px;
+}
+.kalimat_5{
+    margin-top: 7px;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom:0px ;
+}
+.kalimat_6{
+    font-size: 20px;
+    margin-top: 19px;
+
+}
+/*---------------------- body ke-4------------- */
+.kalimat_7,.kalimat_8{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    color: #494949;
+    font-style: normal;
+}
+.kalimat_7{
+    font-size: 25px;
+    margin-left: 100px;
+    font-weight: bold;
+    margin-top: 90px;
+    margin-bottom: 0px;
+    
+}
+.kalimat_8{
+    margin-top: 10px;
+    margin-left: 100px;
+    font-size: 20px;
+    width: 650px;
+}
+/*--------------------- body ke-5 --------------- */
+.body_5{
+    display: flex;
+    margin-top: 70px;
+}
+.macbook{
+    flex: 1;
+    margin-left: 80px;
+}
+.macbook img{
+    width: 600px;
+    height: auto;
+}
+.kalimat_9{
+    flex: 1;
+    margin-left: 20px;
+}
+.kotak_5{
+    width: 449px;
+}
+.kalimat_10{
+    font-size: larger;
+    height: 12vh;
+    border: #307545 solid;
+    border-radius: 14px;
+    text-align: left;
+    align-content: center;
+    margin-top: 40px;
+}
+.kalimat_10 p{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    color: #494949;
+    font-style: normal;
+    margin-left: 22px;
+}
+.gambar {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    margin-top: -35px;
+    background: linear-gradient(to right,#93BB46,#307545);
+    border-radius: 50%; 
+}
+/*----------------- Body ke-6----------------------- */
+.body_6 {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    color: #494949;
+    font-style: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
+    flex-direction: column;
+}
+
+.kalimat_11 {
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.kotak_6 {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 60px;
+}
+
+.kotak_6 a {
+    text-decoration: none;
+    color: #494949;
+}
+
+.image-container {
+    position: relative;
+    height: 42vh;
+    width: auto;
+    margin-bottom: 30px;
+}
+
+.image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(32, 109, 72, 0.5); 
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-container:hover::after {
+    opacity: 1; 
+}
+
+.gambar_ {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.youtube {
+    margin-top: 6vh;
+}
+
+.youtube img {
+    width: 1100px;
+    height: auto;
+    margin-bottom: 20px;
+}
+/* ---------------------Footer ---------------------- */
+.footer{
+    margin-top: 8vh;
+    background-image: url("C:/WEB_CITECTH_JOMBLO HAPPY/asset/footer.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 45vh;
+    display: flex;
+    width: auto;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: #ffffff;
+}
+
+.hidronara{
+    flex: 1;
+    margin-top: 40px;
+    margin-left: 40px;
+    
+}
+.hidronara img{
+    margin-left: 30px;
+    width: 300px;
+    height: auto;
+    
+}
+.tentang_kami{
+    flex: 1;
+}
+.tentang_kami a {
+    color: #ffffff;
+    text-decoration: none;
+}
+.tentang_kami a p{
+    margin-top: 5px;
+}
+.tentang_kami div span img{
+    margin-top: 8px;
+}
+.informasi{
+    flex: 1;
+}
+.informasi a{
+    color: #ffffff;
+    text-decoration: none;
+}
+.informasi a p{
+    margin-top: 5px;
+}
+.informasi a:hover,.tentang_kami a:hover{
+    color: #55ff63;
+}
+
+.copy_right{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    height: 13vh;
+    text-align: center;
+    font-weight: bold;
+    background-color: #307545;
+}
