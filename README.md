@@ -15,6 +15,7 @@ HidroNara adalah platform berbasis web yang dirancang untuk memantau kinerja Pem
    Dashboard interaktif dengan grafik dan data monitoring untuk membantu analisis dan pengambilan keputusan.
 5. Informasi Edukatif
     Menyediakan pengetahuan seputar manfaat dan cara kerja PLTMH untuk meningkatkan kesadaran masyarakat tentang energi terbarukan.
+
 **Fitur yang Direncanakan**
 1. AI Forecasting
    Prediksi debit air menggunakan teknologi kecerdasan buatan untuk mendukung pemeliharaan PLTMH.
