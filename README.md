@@ -41,6 +41,7 @@ Ikuti langkah-langkah berikut untuk menjalankan proyek HidroNara secara lokal:
    Buka file landing_page.html di browser untuk melihat tampilan website.
 7. Atur Path untuk Aset
    Sesuaikan path gambar dan ikon pada file HTML dan CSS dengan folder assets.
+
 #❓ Apa, Mengapa, dan Masalah yang Diselesaikan
 **Apa Itu Proyek HidroNara?**
 HidroNara adalah solusi digital untuk memantau Pembangkit Listrik Tenaga Mikrohidro (PLTMH). Dengan HidroNara, pengguna dapat dengan mudah melihat data debit air dan energi yang dihasilkan secara real-time. Tujuan proyek ini adalah mendukung desa mandiri energi sekaligus mempermudah pengelolaan dan pemantauan PLTMH oleh admin.
