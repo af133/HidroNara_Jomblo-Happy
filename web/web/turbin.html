@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="C:/WEB_CITECTH_JOMBLO HAPPY/web/css/dashboard_admin.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script>
+        Chart.register(ChartDataLabels);
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Energy Usage Chart
+            var ctx = document.getElementById('energyUsageChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'],
+                    datasets: [{
+                        label: 'Debit',
+                        data: [25, 60, 40, 95, 20, 15, 10, 50, 90, 30, 20, 50],
+                        backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                        borderColor: 'rgba(255, 159, 64, 1)',
+                        borderWidth: 1,
+                        type: 'bar'
+                    },
+                    {
+                        label: 'Energi Listrik',
+                        data: [20, 25, 60, 90, 55, 40, 30, 80, 95, 75, 45, 55],
+                        borderColor: '#2EA069',
+                        borderWidth: 2,
+                        fill: false,
+                        type: 'line'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 200,
+                            ticks: {
+                                stepSize: 50
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        },
+                        datalabels: {
+                            display: false 
+                        }
+                    }
+                }
+            });
+
+            // Daily Energy Cost Chart
+            var pieCtx = document.getElementById('dailyEnergyCostChart').getContext('2d');
+            new Chart(pieCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['Energi Dihasilkan (kWh)', 'Energi Tidak Terpakai (Lost Energy)'],
+                    datasets: [{
+                        data: [72, 28],
+                        backgroundColor: ['#FFA048', '#4AB876']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    layout: {
+                        padding: {
+                            top: 10
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            align: 'start',
+                            labels: {
+                                usePointStyle: true,
+                                pointStyle: 'circle',
+                                font: {
+                                    size: 15,
+                                    weight: 550,
+                                },
+                                color: '#00201A',
+                                boxWidth: 20,
+                                padding: 10
+                            }
+                        },
+                        datalabels: {
+                            color: '#FFFFFF',
+                            anchor: 'center', 
+                            align: 'center',
+                            formatter: (value, ctx) => {
+                                let sum = ctx.dataset.data.reduce((a, b) => a + b, 0);
+                                let percentage = (value / sum * 100).toFixed(0) + '%';
+                                return percentage;
+                            },
+                            font: {
+                                size: 16,
+                                weight: 'bold'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Monthly Electricity Load Chart
+            var lineCtx = document.getElementById('monthlyElectricityLoadChart').getContext('2d');
+            new Chart(lineCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September'],
+                    datasets: [{
+                        label: 'Beban Listrik (kW)',
+                        data: [30, 28, 26, 25, 24, 22, 20, 15, 10],
+                        borderColor: '#2EA069',
+                        backgroundColor: 'rgba(46, 160, 105, 0.2)',
+                        borderWidth: 2,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 35,
+                            ticks: {
+                                stepSize: 10
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: true
+                        },
+                        datalabels: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebar = document.getElementById('sidebar');
+            const mainContent = document.getElementById('mainContent');
+            const sidebarToggle = document.getElementById('sidebarToggle');
+            let isExpanded = false;
+
+            function toggleSidebar() {
+                isExpanded = !isExpanded;
+                sidebar.classList.toggle('expanded');
+                if (isExpanded) {
+                    mainContent.style.marginLeft = '250px';
+                } else {
+                    mainContent.style.marginLeft = '64px';
+                }
+            }
+
+            sidebarToggle.addEventListener('click', toggleSidebar);
+        });
+    </script>        
+</head>
+<body class="bg-gray-100 font-outfit">
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="bg-white h-screen fixed top-0 flex flex-col items-center py-4 space-y-8 shadow-md">
+            <a href="dashboard_admin.html" class="sidebar-icon-dash">
+                <img src="C:/WEB_CITECTH_JOMBLO HAPPY/asset/Logo_ijo_dashboard_admin.png" alt="Logo" class="img">
+                <span class="icon-text text-text font-medium">Dashboard</span>
+            </a>
+            <div class="sidebar-menu">
+                <span>menu</span>
+            </div>
+        </a>
+        <a href="dashboard_admin.html" class="sidebar-icon bg-gray-100 rounded" draggable="true" data-page="analysis">
+            <img src="C:/WEB_CITECTH_JOMBLO HAPPY/asset/Ikon_halaman_utama_dashboard.png" alt="Menu Icon 2" class="side-icon">
+            <span class="icon-text text-text font-medium">Halaman Utama</span>
+        </a>
+        <a href="#" class="sidebar-icon bg-primary rounded" draggable="true" data-page="main">
+        <img src="C:/WEB_CITECTH_JOMBLO HAPPY/asset/turbinPutih.png" alt="Menu Icon 1" class="side-icon">
+            <span class="icon-text text-white font-medium">Turbin</span>
+            <a href="#" class="sidebar-icon bg-gray-100 rounded" draggable="true" data-page="settings">
+                <img src="C:/WEB_CITECTH_JOMBLO HAPPY/asset/Ikon_dashboard_3.png" alt="Menu Icon 3" class="side-icon">
+                <span class="icon-text text-text font-medium">Voltase</span>
+            </a>
+            <a href="#" class="sidebar-icon bg-gray-100 rounded" draggable="true" data-page="profile">
+                <img src="C:/WEB_CITECTH_JOMBLO HAPPY/asset/ikon_dashboard_4.png" alt="Menu Icon 4" class="side-icon">
+                <span class="icon-text text-text font-medium">Konsumsi Energi</span>
+            </a>
+        </aside>
+
+        <!-- Main content -->
+        <main id="mainContent" class="p-6 w-full">
+            <header class="flex justify-between items-center mb-6">
+                <div class="flex items-center">
+                    <img src="C:/WEB_CITECTH_JOMBLO HAPPY/asset/Ikon_dashboard_2.png" alt="Dashboard Icon" class="w-9 h-9 mr-4">
+                    <h1 class="text-2xl font-bold text-text">Halaman Turbin</h1>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-8 h-8 bg-blue rounded-full flex items-center justify-center text-white mr-2">
+                        AF
+                    </div>
+                    <span class="text-text">Andre Firmansyah</span>
+                </div>
+            </header>
+
+            <!-- Metric cards -->
+    <div style="padding: 5px;">
+
+        <div style="height: 7vh; width: auto; border-radius: 15px; display: flex; align-items: center; justify-content: flex-start; background-color: rgba(71, 211, 144, 0.5);">
+            <p style="margin-left: 20px;font-size: 20px;font-weight: 600;">PLTMH Rowosari</p>
+        </div >
+            <div style="display: flex; width: auto; gap: 25px;margin-top: 3vh;">
+                <div style="flex: 1; height:9vh; border-radius: 15px; display: flex; align-items: center; justify-content: flex-start; background-color: white; font-size: 15px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);">
+                    <p style="margin-left: 20px;font-size: 19px;">Rowosari, Kec. Sumberjambe, Jember</p>
+                </div>
+                <div style="flex: 1; height: vh; border-radius: 15px; display: flex; align-items: center; justify-content: flex-start; background-color: white; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);display: flex;">
+                    <img style="margin-left: 50px;margin-right: 40px;" src="C:/WEB_CITECTH_JOMBLO HAPPY/asset/Vector.png" alt="#">
+                    <p style="font-size: 19px;margin-left: 130px;margin-right:80px ;">Jumat, 18 Oktober 2024</p>
+                    <img style="margin-left: 70px;" src="C:/WEB_CITECTH_JOMBLO HAPPY/asset/double.png" alt="">
+                </div>
+            </div>
+           </div><div style="display: flex;">
+            <div style=" flex: 1; display: flex; align-items: center; justify-content: right;">
+                <img style="height: 50vh; width: auto;" src="C:/WEB_CITECTH_JOMBLO HAPPY/asset/status_mesin.png" alt="">
+            </div>
+            <div style="flex: 1; display: flex; align-items: center; justify-content:le;">
+                <img style="height: 50vh; width: auto;" src="C:/WEB_CITECTH_JOMBLO HAPPY/asset/suhu temperatur.png" alt="">
+            </div>
+        </div>
+        <div style="display: flex;">
+                <div style="flex: 1;"><img  style="height: 50vh;width: auto;" src="C:/WEB_CITECTH_JOMBLO HAPPY/asset/pelumasan.png" alt=""></div>
+                <div style="flex: 1;">
+                    <img style="height: 50vh;width: auto;" src="C:/WEB_CITECTH_JOMBLO HAPPY/asset/aliran_air.png" alt="">
+                </div>
+                <div style="flex: 1;">
+                    <img  style="height: 50vh;width: auto;" src="C:/WEB_CITECTH_JOMBLO HAPPY/asset/kebisingan.png" alt="">
+                </div>
+
+        </div>
+        
+    </div>
+</div>
+</div>
+</main>
+</div>
+</body>
+</html>

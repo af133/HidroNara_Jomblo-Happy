@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Hidronara</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="C:/WEB_CITECTH_JOMBLO HAPPY/web/css/login_page.css">
+
+</head>
+<body class="bg-gray-100">
+    <div class="flex min-h-screen">
+        <div class="hidden md:block md:w-1/2 relative bg-login">
+            <div class="overlay absolute inset-0"></div>
+            <div class="absolute top-26 left-22 p-40">
+                <img src="C:/WEB_CITECTH_JOMBLO HAPPY/asset/Logo_putih.png" alt="Hidronara Logo" class="h-12">
+            </div>
+        </div>
+        
+        <div class="w-full md:w-1/2 bg-gradient-right flex flex-col justify-center px-20">
+            <div class="max-w-md w-full mx-auto">
+                <h2 class="text-[49.83px] font-bold text-white mb-16">Login</h2>
+                <form id="loginForm" class="w-full">
+                    <div class="mb-10">
+                        <label for="username" class="block text-[24px] font-bold text-white mb-3">Username</label>
+                        <input type="text" id="username" class="w-full px-4 py-4 rounded-[12px] text-gray-700 text-[18px]">
+                        <span id="usernameError" class="error-message">
+                        </span>
+                    </div>
+                    <div class="mb-10">
+                        <label for="password" class="block text-[24px] font-bold text-white mb-3">Password</label>
+                        <input type="password" id="password" class="w-full px-4 py-4 rounded-[12px] text-gray-700 text-[18px]">
+                        <span id="passwordError" class="error-message">
+                        </span>
+                    </div>
+                    <div class="flex items-center justify-between mb-10">
+                        <div class="flex items-center">
+                            <input type="checkbox" id="remember" class="checkbox-round mr-3">
+                            <label for="remember" class="text-lg text-white">Ingat saya</label>
+                        </div>
+                        <a href="#" class="text-lg text-white hover:underline">Lupa Password?</a>
+                    </div>
+                    <button type="submit" class="w-full h-[57.5px] bg-white text-[#307545] py-3 px-3 rounded-[12px]
+                        border-[2.5px] border-white border-solid hover:bg-green-700 hover:text-white 
+                        transition duration-300 hover:shadow-lg font-bold text-[24px] flex justify-center items-center">
+                        Login
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.getElementById('loginForm');
+            var username = document.getElementById('username');
+            var password = document.getElementById('password');
+            var usernameError = document.getElementById('usernameError');
+            var passwordError = document.getElementById('passwordError');
+
+            var validCredentials = [
+                { username: 'admin', password: 'admin123' }
+            ];
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Reset error messages
+                usernameError.style.display = 'none';
+                passwordError.style.display = 'none';
+                
+                var isValid = true;
+
+                if (username.value.trim() === '') {
+                    usernameError.textContent = 'Harap masukkan username';
+                    usernameError.style.display = 'block';
+                    isValid = false; // Set to false if username is empty
+                }
+
+                if (password.value.trim() === '') {
+                    passwordError.textContent = 'Harap masukkan password';
+                    passwordError.style.display = 'block';
+                    isValid = false; // Set to false if password is empty
+                }
+
+                // Check if username and password match any valid credentials
+                if (isValid) {
+                    isValid = validCredentials.some(function(cred) {
+                        return cred.username === username.value.trim() && cred.password === password.value;
+                    });
+
+                    if (!isValid) {
+                        passwordError.textContent = 'Username atau password salah';
+                        passwordError.style.display = 'block';
+                    }
+                }
+                
+                if (isValid) {
+                    // Redirect to dashboard
+                    window.location.href = 'dashboard_admin.html';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
